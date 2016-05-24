@@ -109,8 +109,8 @@ tk.wm_attributes('-topmost', 1)
 canvas = Canvas(tk, width = 500, height = 400, bd = 0, highlightthickness = 0)
 canvas.pack()
 #Background Image:
-bgImage = PhotoImage(file='/home/ropo/python/bg.gif')
-canvas.create_image(0, 0, anchor=NW, image=bgImage)
+#bgImage = PhotoImage(file='/home/ropo/python/bg.gif')
+#canvas.create_image(0, 0, anchor=NW, image=bgImage)
 #Essential for the game, Initializes the animation
 tk.update()
 
