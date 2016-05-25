@@ -108,7 +108,7 @@ canvas.pack()
 
 #Background Image (Only .gif images are supported in Tkinter):
 
-#bgImage = PhotoImage(file='path to the image')
+#bgImage = PhotoImage(file = 'specify the path to the .gif image')
 #canvas.create_image(0, 0, anchor = NW, image = bgImage)
 
 #Essential for the game, Initializes the animation
