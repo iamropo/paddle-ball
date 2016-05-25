@@ -56,7 +56,8 @@ class Ball:
 		#Game Over:
 		if pos[3] >= self.canvas_height:
 			self.game_over = True
-			self.canvas.create_text(245, 100, text='GAME OVER', font=('04b08', 30), fill='red')
+			#'04b08' font is the best for the 'Game Over' message as well as for the score
+			self.canvas.create_text(245, 100, text = 'GAME OVER', font = ('04b08', 30), fill='red')
 
 	def hit_paddle(self, pos):
 		
