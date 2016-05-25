@@ -4,7 +4,7 @@ import random
 
 #Make sure to Play some Mujik!
 #You can add water or spikes below as reference for game over
-#You can put a image instead of a ball, make the face weid on hitting a wall
+#You can put a image instead of a ball, make the face weird on hitting a wall
 #--------
 #Add some Asteroids on hitting them Increment the points not on hitting the paddle(But do it first)
 #And Zombies, HeadShot!
@@ -26,7 +26,7 @@ class Ball:
 		#Score:
 		self.score = 0
 		self.score_board = canvas.create_text(440, 40, text = self.score, fill = 'red', font = ('04b08', 20))
-		#Random Starting speeds, aplllicable only the first time, abs(3) is the top speed
+		#Random Starting speeds:
 		starts = [-3, -2, -1, 1, 2, 3]
 		random.shuffle(starts)
 		self.x = starts[0]
@@ -40,7 +40,6 @@ class Ball:
 		self.canvas.move(self.id, self.x, self.y)
 		pos = self.canvas.coords(self.id)
 		paddle_pos = self.canvas.coords(self.paddle.id)
-		#Setting the final speed for both X and Y as 1!
 		if pos[1] <= 0:
 			self.y = ball_speed
 		if pos[3] >= self.canvas_height:
@@ -54,7 +53,7 @@ class Ball:
 			self.y = -ball_speed
 			self.score = self.score + 1
 			self.canvas.itemconfig(self.score_board, text = self.score)
-		#Game Over...adding 10 just so it would go down farther 10px
+		#Game Over:
 		if pos[3] >= self.canvas_height:
 			self.game_over = True
 			self.canvas.create_text(245, 100, text='GAME OVER', font=('04b08', 30), fill='red')
@@ -89,8 +88,6 @@ class Paddle:
 		self.canvas.move(self.id, self.x, 0)
 		pos = self.canvas.coords(self.id)
 		collided_wall = (pos[0] <= 0) or (pos[2] >= self.canvas_width)
-		
-		#A clever collision detection!
 		if collided_wall:
 			self.x = 0
 
